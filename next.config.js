@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['images.ctfassets.net'],
-  },
+	images: {
+		remotePatterns: [{
+			protocol: "https",
+			hostname:"platform-lookaside.fbsbx.com",
+			port: "",
+			pathname: "/**",
+		}]
+	},
 }
 
 module.exports = nextConfig
