@@ -8,8 +8,7 @@
 # testing
 /coverage
 
-./commit.sh
-./merge.sh
+*.sh
 # next.js
 /.next/
 /out/
