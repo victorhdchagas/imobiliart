@@ -17,13 +17,13 @@ export default function CondominioAddress({condominioId}:{condominioId?:string})
 		if(Utils.onlyDigitsFromString( cep).length==8){
 			const search = async ()=>{
 				
-				const [data ]= await getCep(cep);
+				const data = await getCep(cep);
 				if(formRef.current){
-					formRef.current["logradouro"].value = data.address.road
-					formRef.current["bairro"].value = data.address.suburb
-					formRef.current["estado"].value = data.address.state
-					formRef.current["latitude"].value = data.lat
-					formRef.current["longitude"].value = data.lon
+					formRef.current["logradouro"].value = data.street
+					formRef.current["bairro"].value = data.neighborhood
+					formRef.current["estado"].value = data.state
+					// formRef.current["latitude"].value = data.lat
+					// formRef.current["longitude"].value = data.lon
 					formRef.current["numero"].focus();
 				}
 			};

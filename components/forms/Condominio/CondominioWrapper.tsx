@@ -1,8 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
 import React, { useState } from "react"
-const CondominioEdit = dynamic(()=>import("@/components/forms/Condominio/CondominioEdit"),{ssr:false,loading:()=><span>Carregando..</span>})
-const CondominioAddress = dynamic(()=>import("@/components/forms/Condominio/CondominioAddress"))
+const CondominioEdit = dynamic(()=>import("@/components/forms/Condominio/delete"),{ssr:true,loading:()=><span>Carregando..</span>})
+const CondominioAddress = dynamic(()=>import("@/components/forms/Condominio/CondominioAddress"),{ssr:false,loading:()=><span>Carregando..</span>})
 
 export default function CondominioEditWrapper({condominioId}:{condominioId?:string}) {
 	const [active,setActive] =useState("dados")

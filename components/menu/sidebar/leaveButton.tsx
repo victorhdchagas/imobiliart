@@ -10,8 +10,8 @@ const DivWrapper = tv({
 
 export default function LeaveButton(props:ComponentProps<"button"> & ClassProp<typeof DivWrapper>) {
 	return (
-		<div className={DivWrapper({className:props.className})}>
-			<button {...props}  onClick={() => signOut()} >{props.children}</button>
+		<div className={DivWrapper({className:props.className})} onClick={() => signOut()}>
+			{props.children}
 		</div>
 	)
 }

@@ -1,4 +1,6 @@
 import React from "react"
+import { FaRegUser } from "react-icons/fa6"
+import { RiAdminLine, RiCurrencyLine } from "react-icons/ri"
 
 export default function FormSkeleton() {
 	return (

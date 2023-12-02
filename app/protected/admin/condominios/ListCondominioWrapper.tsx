@@ -25,15 +25,10 @@ export default async function ListCondominioWrapper({query}:{query:string}) {
 	)
 }
 
-async function SyncListCondominioWrapper({query,offset,size}:{query:string} & DefaultPagination) {
-	console.time(query);
-	const sleepFn = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+async function SyncListCondominioWrapper({query=""}:{query:string} & DefaultPagination) {
 	const getData = async () => {
-		await sleepFn(1000);
-		console.log(offset,size)
-		console.timeEnd(query);
         
-		return listCondominiums();
+		return listCondominiums(query);
 	}
 	const data = await getData();
 	return (

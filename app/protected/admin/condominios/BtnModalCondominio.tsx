@@ -10,7 +10,7 @@ export default function BtnModalCondominio({className,condominioId,btnLabel}:{bt
 			<button className={className} onClick={()=>setOpen(state=>!state)}>
 				{btnLabel}
 			</button>
-			{open && createPortal(<DialogFrame title="Adicionar Condominio" isOpen={!!open} onClose={()=>setOpen(false)} visible={open!=null}>
+			{open && createPortal(<DialogFrame title={condominioId?"Editar Condominio":"Adicionar Condominio"} isOpen={!!open} onClose={()=>setOpen(false)} visible={open}>
 				<CondominioEditWrapper condominioId={condominioId}/>
 			</DialogFrame>,document.body)
 			}

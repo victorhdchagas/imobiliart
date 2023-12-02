@@ -100,22 +100,25 @@ model Condominium {
     image     String?  @default("/imagens/condominio_padrao.png")
     createdBy User     @relation(fields: [userId], references: [id])
     userId    String
-    address   Address? @relation(fields: [addressId], references: [id])
-    addressId Int?
+    address   Address?
+    addressId Int?     @unique
 
     @@map("condominium")
 }
 
 model Address {
-    id          Int           @id @default(autoincrement())
-    street      String
-    complement  String
-    number      String
-    zip         String
-    district    String
-    city        String
-    state       String
-    Condominium Condominium[]
+    id            Int         @id @default(autoincrement())
+    street        String
+    complement    String
+    number        String
+    zip           String
+    district      String
+    city          String
+    state         String
+    lat           String?
+    lon           String?
+    Condominium   Condominium @relation(fields: [condominiumId], references: [id])
+    condominiumId String      @unique
 }
 
 enum types_contact {

@@ -1,10 +1,9 @@
-import Image from "next/image"
-import React from "react"
-import { FaMapMarked } from "react-icons/fa"
-import { FaRegUser, FaUsers } from "react-icons/fa6"
-import { RiAdminLine, RiCurrencyLine } from "react-icons/ri"
-import ListItemCondominioEditBtn from "./ListItemCondominioEditBtn"
 import DivAnimateHover from "@/components/ui/DivAnimateHover"
+import Image from "next/image"
+import Link from "next/link"
+import { FaMapMarked } from "react-icons/fa"
+import { FaPencil, FaRegUser, FaUsers } from "react-icons/fa6"
+import { RiAdminLine, RiCurrencyLine } from "react-icons/ri"
 type CardProperties = {
     name:string;
     image?:string|null;
@@ -33,7 +32,7 @@ export default function ListItemCondominio({image,name,totalHomers,totalManagers
 					<span className="text-md text-gray-800 italic self-end pr-10 flex-grow ">Tranquilidade para seu condominio</span>
 				</p>
 				<div className="place-self-end justify-self-end inline-flex gap-1 transition-all flex-grow-0">
-					<ListItemCondominioEditBtn condominioId={id}/>
+					<Link href={`/protected/admin/condominios/${id}`} className="bg-teal-800 rounded-xl p-2 text-white transition-all group"><FaPencil className="w-3 h-3 group-hover:scale-125 group-hover:text-teal-500"/></Link>
 					<button className="bg-red-800 rounded-xl p-2 text-white transition-all group "><FaMapMarked className="w-3 h-3 group-hover:scale-125 group-hover:text-red-500"/></button>
 					<button className="bg-cyan-800 rounded-xl p-2 text-white transition-all  overflow-hidden group"><FaUsers className="w-3 h-3 group-hover:scale-125 group-hover:text-cyan-500"/></button>
 				</div>

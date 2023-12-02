@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma"
-import { timeAgo } from "@/lib/utils"
 import Image from "next/image"
 import RefreshButton from "./refresh-button"
 
@@ -27,8 +26,8 @@ export default async function Table() {
 					>
 						<div className="flex items-center space-x-4">
 							<Image
-								src={user.image}
-								alt={user.name}
+								src={user.image!}
+								alt={user.name!}
 								width={48}
 								height={48}
 								className="rounded-full ring-1 ring-gray-900/5"

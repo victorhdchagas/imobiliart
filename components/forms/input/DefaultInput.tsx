@@ -1,3 +1,4 @@
+"use client"
 //@ts-expect-error type issue
 import {useFormStatus} from "react-dom"
 import { FaSpinner } from "react-icons/fa6"

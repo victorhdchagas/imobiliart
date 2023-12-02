@@ -13,11 +13,11 @@ const inter = Inter({
 	display: "swap",
 })
 
-export const runtime = "nodejs"
 export default function RootLayout({
-	children,
+	children
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  types:any
 }) {
 	return (
 		<html lang="pt-BR">

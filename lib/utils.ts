@@ -16,13 +16,8 @@ export default class Utils{
 				"Content-Type":"application/json"
 			}
 		})
-		const json = await response.json();
-		const response2 = await fetch(json.message.substring(json.message.indexOf("https"),json.message.indexOf("reason")-1),{
-			method:"GET",
-			headers:{
-				"Content-Type":"application/json"
-			}})
-		return await response2.json();
+		return await response.json();
+		
 	}
 	static toCamelCase(str:string){
 		return str.replace(/([-_][a-z])/ig, ($1) => {
