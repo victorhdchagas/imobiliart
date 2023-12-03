@@ -6,7 +6,7 @@ import ImageFileSystemStorage from "@/core/services/image-fs-storage";
 import ImageService from "@/core/services/image-service";
 import prisma from "@/lib/prisma";
 import {z} from "zod";
-import { condominioSchema } from "@/lib/schemas/condominio-schema";
+import { condominioSchema, condominioWithIdSchema } from "@/lib/schemas/condominio-schema";
 import { mountFileSchema } from "@/lib/schemas/file-schema";
 export default class CondominioFacade{
 	private addressAdapter:CondominiumAddressAdapter = new CondominiumAddressAdapter();
@@ -45,7 +45,7 @@ export default class CondominioFacade{
 	}
 
 	validateCreate(params:any){
-		return this.validateZod<z.infer<typeof condominioSchema>>(params,condominioSchema)
+		return this.validateZod<z.infer<typeof condominioWithIdSchema>>(params,condominioWithIdSchema)
 		// const validatedData = condominioSchema.safeParse(params);
 		// if(!validatedData.success){
 		// 	return {success:false,errors:validatedData.error.formErrors.fieldErrors}

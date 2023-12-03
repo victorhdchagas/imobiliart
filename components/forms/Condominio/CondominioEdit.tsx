@@ -28,8 +28,8 @@ export default function CondominioEdit({condominio}:{condominio?:{
 	return (
 		<form action={dispatch} className="flex flex-col justify-between items-stretch grow py-2 gap-2">
 			<InputWrapper name="imagem">
-				<input type="file" accept="image/*" name="image" />
-				<InlineFormError  errors={state.errors?.image} id="image-error"/>
+				<input type="file" accept="image/*" name="imagem" />
+				<InlineFormError  errors={state.errors?.imagem} id="imagem-error"/>
                 
 			</InputWrapper>
 			<Input name="nome" autoFocus={true} defaultValue={condominio?.name}/>

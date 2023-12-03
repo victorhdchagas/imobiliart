@@ -5,7 +5,6 @@ import { CondominioEnderecoSchema, CondominioEnderecoWithIdSchema } from "./cond
 
 export const condominioSchema = z.object({
 	nome:z.string(),
-	userId:z.string(),
 	imagem:z.optional(z.string()),
 	endereco:z.optional(CondominioEnderecoSchema),
 })

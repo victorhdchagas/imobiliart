@@ -11,8 +11,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode,
 }) {
-	const session = await useServerSession();
-	if(session?.user) redirect("/protected")
+	try {
+		const session = await useServerSession();
+		if(session?.user) redirect("/protected")
+        
+	} catch (error) {
+		console.log(error)
+	}
 
 	return (
 		<>

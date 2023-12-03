@@ -39,7 +39,8 @@ module.exports = {
 		"quotes": [
 			"error",
 			"double"
-		]
+		],
+		"no-mixed-spaces-and-tabs":0,
 		// "semi": [
 		// 	"error",
 		// 	"always"

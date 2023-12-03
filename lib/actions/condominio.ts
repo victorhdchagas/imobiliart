@@ -70,17 +70,18 @@ export async function updateCondominio(_:BaseUploadState, data:FormData) {
 	const formJson = Object.fromEntries(data.entries());
 	const validatedCreate = condominioFacade.validateCreate(formJson)
 	if(!validatedCreate.success)
-		return validatedCreate.errors
+		return {errors:validatedCreate.errors}
     
-	const validatedImage = condominioFacade.validateImage(data.get("image") as File,{});
+	const validatedImage = condominioFacade.validateImage(data.get("imagem") as File,{});
 	if(!validatedImage.success){
-		return validatedImage.errors
+		return {errors:validatedImage.errors}
 	}
 	const session =await useServerSession();
 	const file = data.get("image") as File;
 	const filepath = `/condominio/${new Date().getTime()}${file.name}`
 	await setTimeout(async ()=>writeFileSync(`./public${filepath}`, Buffer.from(await file.arrayBuffer())),10);
 	const id = data.get("id") as string;
+	if(!session?.user) throw new Error("Não autorizado")
 	const dataToCreate ={
 		data:{
 			name:data.get("nome") as string,

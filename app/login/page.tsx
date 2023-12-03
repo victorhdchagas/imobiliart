@@ -1,4 +1,4 @@
-import FacebookLoginButton from "@/components/buttons/login/facebook";
+import FacebookLoginButton from "@/components/forms/buttons/login/facebook";
 
 export default async function LoginPage() {
 	return (
